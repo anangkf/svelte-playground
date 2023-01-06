@@ -5,4 +5,11 @@
 
 <h1>Welcome to SvelteKit</h1>
 <p>Hello {name}!</p>
-<img src={randomImg} aria-hidden="true" width={200} alt="random-image">
+<img class="image" src={randomImg} aria-hidden="true" alt="random-image">
+
+<style>
+  .image{
+    width: 200px;
+    border: 2px dotted #edaa66;
+  }
+</style>
