@@ -2,6 +2,7 @@
   <ul>
     <li><a href="/">Intro</a></li>
     <li><a href="/reactivity">Reactivity</a></li>
+    <li><a href="/props">Props</a></li>
   </ul>
   <hr>
 </nav>
