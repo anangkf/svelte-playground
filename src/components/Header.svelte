@@ -19,7 +19,6 @@
   ul li a{
     text-decoration: none;
     color: #212121;
-
   }
   ul li a:hover{
     color: #ff8811;

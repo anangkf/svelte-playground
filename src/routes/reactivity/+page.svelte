@@ -36,6 +36,7 @@
       <button class="btn increment-btn" on:click={increment}>Increment</button>
       <button class="btn reset-btn" on:click={reset}>Reset</button>
     </div>
+    <a href="/reactivity/update">Check update feature out!</a>
   </div>
 
 </section>
@@ -43,6 +44,13 @@
 <style>
   p{
     font-family: sans-serif;
+  }
+  a{
+    text-decoration: none;
+    color: #212121;
+  }
+  a:hover{
+    color: #ff8811;
   }
   .flex-wrap{
     display: flex;
