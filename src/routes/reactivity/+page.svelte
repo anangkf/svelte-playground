@@ -1,6 +1,6 @@
 <script>
   let number = 0;
-
+  $: doubled = number * 2;
   function increment(){
     number += 1
   }
@@ -16,12 +16,16 @@
 <section>
   <div class="flex-wrap column">
     <p class="num-display">{number}</p>
+    <p>{number} doubled is {doubled}</p>
     <button class="increment-btn" on:click={increment}>Increment</button>
   </div>
 
 </section>
 
 <style>
+  p{
+    font-family: sans-serif;
+  }
   .flex-wrap{
     display: flex;
     width: 98vw;
