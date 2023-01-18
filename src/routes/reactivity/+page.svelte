@@ -4,6 +4,21 @@
   function increment(){
     number += 1
   }
+  function reset(){
+    number = 0
+  }
+  // You can easily group statements together with a block:
+  $: {
+    console.log(`the count is ${number}`)
+    // alert(`number incremented succesfully!`)
+  }
+  // You can even put the $: in front of things like if blocks:
+  $: {
+    if(number > 20){
+      alert(`The number is too much! \nwe are going to reset it.`)
+      reset()
+    }
+  }
 </script>
 
 <svelte:head>
@@ -17,7 +32,10 @@
   <div class="flex-wrap column">
     <p class="num-display">{number}</p>
     <p>{number} doubled is {doubled}</p>
-    <button class="increment-btn" on:click={increment}>Increment</button>
+    <div class="flex-wrap gap">
+      <button class="btn increment-btn" on:click={increment}>Increment</button>
+      <button class="btn reset-btn" on:click={reset}>Reset</button>
+    </div>
   </div>
 
 </section>
@@ -41,8 +59,7 @@
     font-weight: bold;
     font-size: 6rem;
   }
-  .increment-btn{
-    background-color: #ffee48;
+  .btn{
     padding: 1rem 2rem;
     font-size: medium;
     text-transform: uppercase;
@@ -52,9 +69,23 @@
     border-radius: 14px;
     transition: ease-out .25s;
   }
-  .increment-btn:hover{
+  .btn:hover{
     cursor: pointer;
-    background-color: #ffdd48;
     transform: scale(1.075);
+  }
+  .increment-btn{
+    background-color: #ffee48;
+  }
+  .increment-btn:hover{
+    background-color: #ffdd48;
+  }
+  .reset-btn{
+    background-color: #ff2233;
+  }
+  .reset-btn:hover{
+    background-color: #ff2020;
+  }
+  .gap{
+    gap: 12px;
   }
 </style>
