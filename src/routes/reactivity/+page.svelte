@@ -6,6 +6,7 @@
   }
   function reset(){
     number = 0
+    doubled = 0
   }
   // You can easily group statements together with a block:
   $: {
