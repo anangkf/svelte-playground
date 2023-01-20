@@ -4,6 +4,7 @@
     <li><a href="/reactivity">Reactivity</a></li>
     <li><a href="/props">Props</a></li>
     <li><a href="/logic">Logic</a></li>
+    <li><a href="/events">Events</a></li>
   </ul>
   <hr>
 </nav>
@@ -13,6 +14,7 @@
     display: flex;
     gap: 16px;
     margin-bottom: 0px;
+    padding: 0;
   }
   ul li {
     list-style: none;
