@@ -10,7 +10,8 @@
 -->
 <script>
 	// import Inner from "../../components/Inner.svelte";
-	import Outer from "../../components/Outer.svelte";
+	import CustomButton from "../../components/CustomButton.svelte";
+import Outer from "../../components/Outer.svelte";
 
   const INIT_MOUSE_POSITION = { x: 0, y: 0};
   // if we not spread INIT_MOUSE_POSITION both m and INIT_MOUSE_POSITION values will be changed
@@ -46,6 +47,7 @@
   <button on:click|once={handleReset}>Reset once</button>
   <!-- <Inner on:press={handlePress}/> -->
   <Outer on:press={handlePress}/>
+  <CustomButton on:click='{() => alert('Hi! Event forwarding works for DOM events too.')}'/>
 </section>
 
 <style>
