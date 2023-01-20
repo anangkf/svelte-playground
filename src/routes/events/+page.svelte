@@ -8,6 +8,8 @@
   }
 </script>
 
+<!-- we can add inline event handler like this
+<section class="screen" on:mousemove="{e => m = {x: e.x, y: e.y}}"> -->
 <section class="screen" on:mousemove={handleMouseMove}>
   <h3>The mouse position is: {m.x} x {m.y} </h3>
 </section>
