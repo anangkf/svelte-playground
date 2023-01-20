@@ -2,8 +2,8 @@
   let nums = [1,2,3]
   let num;
 
-  function addNumber(e){
-    e.preventDefault()
+  function addNumber(){
+    // e.preventDefault()
     nums = [...nums, num]
     alert(`${num} added to the array!`)
     num = ''
@@ -20,7 +20,7 @@
 <section>
   <div class="flex-wrap column">
     <p class="display">{JSON.stringify(nums)}</p>
-    <form on:submit={addNumber}>
+    <form on:submit|preventDefault={addNumber}>
       <input type="number" bind:value={num}>
       <button type="submit">Add number</button>
     </form>
