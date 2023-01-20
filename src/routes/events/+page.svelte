@@ -9,7 +9,8 @@
   trusted | only trigger handler if event.isTrusted is true. I.e. if the event is triggered by a user action.
 -->
 <script>
-	import Inner from "../../components/Inner.svelte";
+	// import Inner from "../../components/Inner.svelte";
+	import Outer from "../../components/Outer.svelte";
 
   const INIT_MOUSE_POSITION = { x: 0, y: 0};
   // if we not spread INIT_MOUSE_POSITION both m and INIT_MOUSE_POSITION values will be changed
@@ -43,7 +44,8 @@
   <!-- we can also chaining event modifiers together -->
   <!-- <button on:click|once|preventDefault={handleReset}>Reset once</button> -->
   <button on:click|once={handleReset}>Reset once</button>
-  <Inner on:press={handlePress}/>
+  <!-- <Inner on:press={handlePress}/> -->
+  <Outer on:press={handlePress}/>
 </section>
 
 <style>
