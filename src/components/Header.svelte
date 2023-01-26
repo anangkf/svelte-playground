@@ -5,6 +5,7 @@
     <li><a href="/props">Props</a></li>
     <li><a href="/logic">Logic</a></li>
     <li><a href="/events">Events</a></li>
+    <li><a href="/bindings">Bindings</a></li>
   </ul>
   <hr>
 </nav>
