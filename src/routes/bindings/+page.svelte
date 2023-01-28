@@ -1,7 +1,7 @@
 <script>
   let name = '';
   let age = '';
-
+  
   const languages = [
     {key: 'javascript', name: 'Javascript'},
     {key: 'react', name: 'React'},
@@ -23,6 +23,7 @@
 
   let pref = ''
 
+  let value = ''
 </script>
 
 <svelte:head>
@@ -67,6 +68,9 @@
         <input type="radio" bind:group={pref} name="pref" value="DevOps">
         DevOps
       </label>
+      <p>Write down your experience</p>
+      <textarea cols="60" rows="10" bind:value /><br>
+      <!-- <small>You can wrap the sentence with "*" to make them <em>italic</em> or "**" to make them <strong>bold</strong></small> -->
     </form>
 
     <aside class="content">
@@ -80,6 +84,8 @@
         {/each}
       </ol>
       <p>Prefered Role: {pref}</p>
+      <p>Experience:</p>
+      <p>{value}</p>
     </aside>
   </section>
 </main>
@@ -89,10 +95,15 @@
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+    position: relative;
   }
   .content{
     width: 40%;
     margin: 0 1rem;
+  }
+  .container aside{
+    position: sticky;
+    top: 0;
   }
   .formparts{
     display: grid;
