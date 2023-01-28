@@ -21,6 +21,8 @@
     exps = [...exps, name]
   }
 
+  let pref = ''
+
 </script>
 
 <svelte:head>
@@ -48,7 +50,25 @@
           </label>
         {/each}
       </div>
+      <p>Career Preference in Web Development</p>
+      <label>
+        <input type="radio" bind:group={pref} name="pref" value="Frontend">
+        Frontend
+      </label><br>
+      <label>
+        <input type="radio" bind:group={pref} name="pref" value="Backend">
+        Backend
+      </label><br>
+      <label>
+        <input type="radio" bind:group={pref} name="pref" value="Fullstack">
+        Fullstack
+      </label><br>
+      <label>
+        <input type="radio" bind:group={pref} name="pref" value="DevOps">
+        DevOps
+      </label>
     </form>
+
     <aside class="content">
       <h2>Your data</h2>
       <p>Name: {name}</p>
@@ -59,6 +79,7 @@
           <li>{exp}</li>
         {/each}
       </ol>
+      <p>Prefered Role: {pref}</p>
     </aside>
   </section>
 </main>
