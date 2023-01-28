@@ -21,9 +21,9 @@
     exps = [...exps, name]
   }
 
-  let pref = ''
-
-  let value = ''
+  let pref = '';
+  let value = '';
+  let year;
 </script>
 
 <svelte:head>
@@ -71,6 +71,12 @@
       <p>Write down your experience</p>
       <textarea cols="60" rows="10" bind:value /><br>
       <!-- <small>You can wrap the sentence with "*" to make them <em>italic</em> or "**" to make them <strong>bold</strong></small> -->
+      <p>Experience (in year):</p>
+      <select name="" bind:value={year} >
+        {#each ['less than 1', '1 to 3', '3 to 5', 'more than 5'] as value }
+          <option {value}>{value}</option>
+        {/each}
+      </select>
     </form>
 
     <aside class="content">
@@ -86,6 +92,7 @@
       <p>Prefered Role: {pref}</p>
       <p>Experience:</p>
       <p>{value}</p>
+      <p>Experience (in year): {year} years</p>
     </aside>
   </section>
 </main>
@@ -95,13 +102,14 @@
     display: flex;
     justify-content: space-between;
     gap: 2rem;
-    position: relative;
+    /* position: relative; */
   }
   .content{
     width: 40%;
     margin: 0 1rem;
   }
   .container aside{
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
   }
