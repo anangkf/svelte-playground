@@ -1,11 +1,31 @@
+<script>
+  import { page } from '$app/stores';
+
+  const routes = [
+    {id: 1, label: 'Reactivity', path: '/reactivity'},
+    {id: 2, label: 'Props', path: '/props'},
+    {id: 3, label: 'Logic', path: '/logic'},
+    {id: 4, label: 'Events', path: '/events'},
+    {id: 5, label: 'Bindings', path: '/bindings'},
+  ]
+  
+</script>
+
 <nav>
   <ul>
-    <li><a href="/">Intro</a></li>
-    <li><a href="/reactivity">Reactivity</a></li>
-    <li><a href="/props">Props</a></li>
-    <li><a href="/logic">Logic</a></li>
-    <li><a href="/events">Events</a></li>
-    <li><a href="/bindings">Bindings</a></li>
+    <li 
+        class:active={$page.url.pathname === '/'}
+      >
+        <a href='/'>Intro</a>
+      </li>
+    <!-- keyed each -->
+    {#each routes as {id, label, path} (id)}
+      <li 
+        class:active={$page.url.pathname.includes(path)}
+      >
+        <a href={path}>{label}</a>
+      </li>
+    {/each}
   </ul>
   <hr>
 </nav>
@@ -25,10 +45,15 @@
     text-decoration: none;
     color: #212121;
   }
-  ul li a:hover{
+  ul li:not(.active):hover a{
     color: #ff8811;
   }
   hr{
     border: 1px solid #aaffee;
+  }
+  .active{
+    background-color: #ff8811;
+    padding: 0 3px;
+    border-radius: 2px;
   }
 </style>
