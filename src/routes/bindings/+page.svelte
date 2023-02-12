@@ -24,6 +24,8 @@
   let pref = '';
   let value = '';
   let year;
+  let workPrefs = [];
+
 </script>
 
 <svelte:head>
@@ -77,6 +79,15 @@
           <option {value}>{value}</option>
         {/each}
       </select>
+      <div class="multiple">
+        <p>Working system preference</p>
+        <small>Use <kbd>Ctrl + Click</kbd> to selecet multiple options</small>
+      </div>
+      <select multiple bind:value={workPrefs}>
+        <option value="WFO">WFO</option>
+        <option value="WFH">WFH</option>
+        <option value="WFA">WFA</option>
+      </select>
     </form>
 
     <aside class="content">
@@ -93,6 +104,7 @@
       <p>Experience:</p>
       <p>{value}</p>
       <p>Experience (in year): {year} years</p>
+      <p>Working preference: {workPrefs.join(', ')}</p>
     </aside>
   </section>
 </main>
@@ -120,5 +132,16 @@
   .explang{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+  kbd{
+    background-color: #bbb;
+    padding: 1px 2px;
+    border-radius: 2px;
+  }
+  .multiple p{
+    margin: 20px 0 2px 0;
+  }
+  .multiple{
+    margin: 12px 0;
   }
 </style>
