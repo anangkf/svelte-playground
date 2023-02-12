@@ -25,7 +25,8 @@
   let value = '';
   let year;
   let workPrefs = [];
-
+  let html = '';
+  
 </script>
 
 <svelte:head>
@@ -88,6 +89,15 @@
         <option value="WFH">WFH</option>
         <option value="WFA">WFA</option>
       </select>
+      <!-- Elements with a contenteditable="true" attribute support textContent and innerHTML bindings -->
+      <p>Motivation letter</p>
+      <div
+        class="content-editable"
+        contenteditable="true"
+        bind:innerHTML={html}
+      >
+
+      </div>
     </form>
 
     <aside class="content">
@@ -105,6 +115,8 @@
       <p>{value}</p>
       <p>Experience (in year): {year} years</p>
       <p>Working preference: {workPrefs.join(', ')}</p>
+      <p>Motivation letter</p>
+      <p>{@html html}</p>
     </aside>
   </section>
 </main>
@@ -143,5 +155,12 @@
   }
   .multiple{
     margin: 12px 0;
+  }
+  .content-editable{
+    border: 2px solid #eda121;
+    border-radius: 4px;
+    margin: 8px 0;
+    height: max-content;
+    padding: 3px;
   }
 </style>
