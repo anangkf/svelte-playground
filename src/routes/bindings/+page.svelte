@@ -1,4 +1,6 @@
 <script>
+  import { goto } from '$app/navigation'
+
   let name = '';
   let age = '';
   
@@ -26,6 +28,12 @@
   let year;
   let workPrefs = [];
   let html = '';
+
+  const handleSubmit = () => {
+    if(window.confirm('Are you sure you want to submit the data?')) {
+      goto('/bindings/create-pin')
+    }
+  }
   
 </script>
 
@@ -35,7 +43,7 @@
 
 <main>
   <section class="container">
-    <form class="content">
+    <form class="content" on:submit|preventDefault={handleSubmit}>
       <h2>Form Registration Sveltekit Crashcourse 2023</h2>
       <label class="formparts" for="name">
         Name: 
@@ -98,6 +106,7 @@
       >
 
       </div>
+      <button type="submit">Submit</button>
     </form>
 
     <aside class="content">
